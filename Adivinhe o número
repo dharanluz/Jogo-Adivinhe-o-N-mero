@@ -1,0 +1,24 @@
+import random
+
+print("Bem-vindo ao jogo : adivinhe o numero!")
+print("Eu escolhi um numero entre 1 e 100. Tente adivinhar!")
+
+# o computador escolhe um número aleatório entre 1 e 100
+numero_secreto = random.randint(1, 100)
+
+tentativas = 0
+acertou = False
+
+while not acertou:
+    # o jogador digita um palpite
+    palpite = int(input("Qual seu palpite: "))
+    tentativas += 1
+
+    # verifica o palpite
+    if palpite < numero_secreto:
+        print("🔻 O número secreto é maior.")
+    elif palpite > numero_secreto:
+        print("🔺 O número secreto é menor.")
+    else:
+        print(f"🎉 Parabéns! Você acertou o número {numero_secreto} em {tentativas} tentativas.")
+        acertou = True
